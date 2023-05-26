@@ -35,10 +35,10 @@ int main() {
 	isotrB.Dump();
 	isotrB.Draw();
 
-	//cout << "Destructor test" << endl;
+	cout << "Destructor test" << endl;
 
-	//isotrB~IsoTriangle;
-	//isotrB.Dump();
+	isotrB.~IsoTriangle();
+	isotrB.Dump();
 
 	cout << "Constructor with wrong assigned values" << endl;
 
@@ -68,6 +68,58 @@ int main() {
 	
 	cout << "the two values should correspond" << endl;
 
-		
+	cout << "Comparison Operator" << endl;
+
+	if (AO1 == AO2)
+		cout << "it functions" << endl;
+	else
+		cout << "its not correct" << endl;
+
+	///Setters
+
+	AO1.SetBase(2);
+
+	AO1.SetBase(-2);
+
+
+	AO1.SetHeight(2);
+
+	AO1.SetHeight(-2);
+
+	AO1.SetParam(5,5); // should set the values of the prewious object both to 5
+	AO1.Draw();
+
+	///Getters
+
+	cout << " the base is " << AO1.GetBase();
+	cout << " the height is " << AO1.GetHeight();
+	cout << " the side is " << AO1.GetSide();
+
+	cout << " the area is " << AO1.GetArea();
+	cout << " the perimeter is " << AO1.GetPerimeter();
+
+
+
+
+
+
+	///Trapezoid part
+	/*
+	cout << "Default Constructor" << endl;
+
+	IsoTrapezoid isotzA;
+
+	isotzA.Dump();
+	isotzA.Draw();
+
+	cout << "Constructor with assigned values" << endl;
+
+	IsoTrapezoid isotzB(2.2, 2.2);
+
+	isotzB.Dump();
+	isotzB.Draw();
+	*/
+
+
 	return 0;
 }
